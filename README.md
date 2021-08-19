@@ -1,331 +1,174 @@
 # tf-react-cloud-web-mobile
 
-Deploying Deep Learning Models on Web and Mobile
+Deploying Deep Learning Models don Web and Mobile
 
 <p float="left">
   <a href="https://www.manning.com/liveproject/deploying-a-deep-learning-model-on-web-and-mobile-applications?utm_source=dataumbrella&utm_medium=affiliate&utm_campaign=liveproject_pattaniyil_02_03_21&utm_content=published&a_aid=dataumbrella&a_bid=187b748d">
-  <img src="../assets/images/manning_project.png" width="50%" height="100%" style="padding:1px;border:thick solid black;" align="top"> 
+  <img src="./assets/images/manning_project.png" width="50%" height="100%" style="padding:1px;border:thick solid black;" align="top"> 
   </a>
-
 </p>
 
 <p float="left">
-  <a href="https://food-img-classifier.herokuapp.com">
-  <img src="../assets/images/app_food_web2.png" width="50%" height="100%" style="padding:1px;border:thick solid black;" align="top"> 
+  <p>Here is what the mobile app looks like.</p>
+  <a href="https://food-classifier-demo.herokuapp.com">
+  <img src="../assets/imgs/food-classifier-mobile-app-demo.png" width="50%" height="100%" style="padding:1px;border:thick solid black;" align="top"> 
   </a>
   
+  <p>Here is the web application in action.</p>
   <a href="https://play.google.com/store/apps/details?id=com.rsnp.foodclassifier">
-  <img src="../assets/images/demo.gif"         width="45%" height="30%" style="padding:1px;border:thick solid black;"> 
+  <img src="../assets/imgs/food-classifier-web-app-demo.gif"         width="45%" height="30%" style="padding:1px;border:thick solid black;"> 
   </a>
 </p>
 
 ---
 
-## Introduction
+## Start Project
 
-A web and mobile app image classifier. This example uses the fastai library, but a model weights file from **any deep learning library** can be used to create a web and mobile app using our methods.
+- filling the role of a data scientist or machine learning engineer tasked with building a deep learning image classification model.
+- You will expand on your role of data scientist, adding some data engineering skills to your toolset by deploying the model to both web and mobile.
 
-## Summary
+- You will create an application that will take a photo of a food item, then return the image name with an associated probability.
+- This can be a helpful application to aid in food recognition. This application will run on a website on your computer and also on your phone.
+- You could be working in a broad range of fields and have some experience in computation and machine learning.
 
-The project covers:
+### You will
 
-- training a deep learning model for food images using fastai
-- deploying a web app using Heroku and Flask
-- deploying a mobile app
+- Train a deep learning model using TensorFlow.
+- Store that model on a server and locally.
+- Create a web application that allows users to upload an image or URL of a food item and return the predicted image class name with some probability.
+- Create a mobile application that allows users to take a photo or upload an image from their phone and returns the predicted image class name with some probability.
+- This liveProject will benefit data scientists, machine learning engineers, and data engineers.
+- If you’re a data scientist, you’ll develop techniques for deploying and demonstrating your models.
+- The beauty of this project is you will create an application that is deployed and accessible for others to use on their smart phone.
 
-Our Heroku **web** app is [**food-img-classifier**](https://food-img-classifier.herokuapp.com)
+## Techniques employed
 
-Our **mobile** apps are available:
+- These are some of the technologies and concepts you will become familiar with in this project.
+- We provide detailed instructions and references to aid in completing each item.
+- These tools will expand your data science skillset.
+- The key to being a successful data scientist isn’t knowing every tool, but rather being flexible as you explore and work with new technologies in this ecosystem.
 
-- iOS Apple store: [Food Classifier](https://itunes.apple.com/us/app/food-classifier/id1445356461?mt=8)
-- Android Google Play: [Food Classifier](https://play.google.com/store/apps/details?id=com.rsnp.foodclassifier)
+- **Colab:** Train deep learning models using GPU
+- **TensorFlow/Keras:** Open source libraries to perform deep learning
+- **TensorFlow.js:** Use the TensorFlow ecosystem to deploy the deep learning model
+- **Expo/ReactNative:** Create the web application
+- **Heroku/GitHub Pages:** Create the web application
+- **Docker:** Deploy the web application
+- **Expo:** Deploy the mobile application
+- Mobile phone
+- **Node.js/NVM:** Deploy the mobile application
 
-Our **GitHub repositories**:
+## Project outline
 
-- [web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier)
-- [mobile-deep-learning-classifier](https://github.com/npatta01/mobile-deep-learning-classifier)
+- The project consists of 3 parts. As each milestone emphasizes different skills, the deliverables for each will vary:
 
-## Citation Note
+### 1. Building an image classifier
 
-If you do use our blog or GitHub repos to create your own web or mobile app, we would appreciate it if you would give our work attribution by sharing the below citation:
+- Create a Colab notebook
+  - [Get started using: Intro to Colab 101](https://colab.research.google.com/github/ROZBEH/rozbeh.github.io/blob/master/colab_101.ipynb)
+- Table comparing metrics on different model architectures
+- You will perform deep learning image classification using pre-trained models and experiment with some fine-tuning.
+- You will experiment with models like ResNet and mobile-optimized models like MobileNet. You will learn to evaluate a model on its inference, size, and accuracy.
 
-> Pattaniyil, Nidhin and Shaikh, Reshama, [Deploying Deep Learning Models On Web And Mobile](https://reshamas.github.io/deploying-deep-learning-models-on-web-and-mobile/), 2019
+### 2. Deploying a web application
 
-## Jump to:
+- Link to Heroku web application
+- Link to GitHub repo
+- Given the trained model from Milestone 1, you will optimize the model for serving on the web.
 
-Part 1. [Training the Classifier](#training-the-classifier)
+- There are 2 ways to deploy an app:
 
-Part 2. [Deploying the **WEB** App](#deploying-the-web-app)
+  - running on the server
+  - running on the browser natively
 
-1.  [Input to Heroku App](#input-to-heroku-app)
-2.  [File Updates to Make](#file-updates-to-make)
-3.  [Heroku Setup](#heroku-setup)
-4.  [Our Flask Web Application](#our-flask-web-application)
+- For the server deployment, you will learn how to deploy the model as a service using Docker, and run on Heroku.
 
-Part 3. [Deploying the **MOBILE** App](#deploying-the-mobile-app)
+- For the browser, you will serve the model using TensorFlow.js as a static site on GitHub pages.
 
-1.  [File Updates to Make](#file-updates-to-make)
-2.  [Our Apps](#our-apps)
-3.  [Pricing Options](#pricing-options)
+### 3. Deploying a mobile application
 
-## Training the Classifier
+- Link to GitHub repo
+- Screenshot of mobile application
 
-The Jupyter notebook and code used to train the model are available in this GitHub repository: [web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier)
+- Convert the model to run on your mobile device using Expo.
+- You will take the model trained from Milestone 1 and convert it to a format needed for tfjs-native.
+- You will be provided with boiler plate code to use their transformed model in a Expo/React Native project. Expo/React Native is a cross-platform mobile development library.
 
-The following were used for model **training** (see [requirements.txt](requirements.txt)):
+- The skills are covered in the following order:
 
-- fastai: version 1.0.42
-- PyTorch: version 1.0.0
-- Python: version 3.6
-
-### Deep learning library: fastai
-
-The [fastai](https://github.com/fastai/fastai) deep learning library, version 1.0 was utilized. Fastai runs on top of PyTorch. The [fastai MOOC](https://docs.fast.ai) was officially released to the public in early 2019.
-
-### GPU: Google Cloud Compute
-
-The data was retrieved and analyzed on Google Cloud Platform[(GCP)](console.cloud.google.com/compute/instances). Any cloud platform (such as Paperspace or AWS) is usable, as long as a GPU is available. Instructions for setting up a GPU working environment will be available from fastai.
-
-For this project, we used the Nvidia Tesla P100 with 100 GB of storage.
-
-### Dataset: Food-101
-
-The [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) data was used which included **101 food categories** with a total of 101K images. Thus, each class had 1000 images, of which 250 are manually reviewed test images and 750 are training images:
-
-> On purpose, the training images were not cleaned, and thus still contain some amount of noise. This comes mostly in the form of intense colors and sometimes wrong labels. All images were rescaled to have a maximum side length of 512 pixels.
-
-#### Data Citation
-
-Bossard, Lukas and Guillaumin, Matthieu and Van Gool, Luc, Food-101 -- Mining Discriminative Components with Random Forests, European Conference on Computer Vision, 2014
-
-#### Retrieving the data
-
-The dataset size is 5GB and can be retrieved using:
-
-```bash
-wget http://data.vision.ee.ethz.ch/cvl/food-101.tar.gz
-```
-
-#### Unzip data
-
-The `tar.gz` file can be opened using:
-
-```bash
-tar xzf file.tar.gz
-```
-
-### Training the data: Resnet-34 CNN
-
-#### Training Time
-
-We used the Resnet-34 CNN architecture. The model took about an hour to run on GCP.
-
-#### Training the Deep Learning Model
-
-The code used for training the data is available in the repository [npatta01/web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier) in the notebook [1_train.ipynb](https://github.com/npatta01/web-deep-learning-classifier/blob/master/notebooks/1_train_large.ipynb)
-
-We use `ImageDataBunch` to read in the images. This Python class does the following:
-
-- specifies the path where the images are located
-- assigns training/validation ratio to 80/20
-- uses the default transformation of images
-- sets the image size to 224
-- sets batch size to 64
-- normalizes the images
-
-```python
-path = Path('../data/food-101/images')
-data = ImageDataBunch.from_folder(path, valid_pct=0.2,
-        ds_tfms=get_transforms(), size=224, num_workers=8, bs=64).normalize(imagenet_stats)
-```
-
-The data is trained on a pre-trained model, resnet34, and we run the `learner` to determine the optimal learning rate.
-
-```python
-learn = create_cnn(data, models.resnet34, metrics=error_rate,pretrained=True)
-learn.lr_find()
-learn.recorder.plot()
-```
-
-In our case, a learning rate of 0.01 works well
-
-```python
-lr = 1e-2
-```
-
-#### Other Architectures
-
-We did run more complex architectures. However, because the data had 101 classes and for the purpose of this example and article, and GPU time and storage, we used a simple architecture of `resnet34`.
-
-#### Back to training
-
-Next, we fit 8 epochs using our learning rate of 0.01, and we observe our error rate drops to 28.9%.
-
-```bash
-epoch train_loss  valid_loss  error_rate
-1 1.999872  1.817976  0.470594
-2 2.006050  1.872519  0.483911
-3 1.893473  1.697205  0.441634
-4 1.778546  1.497193  0.388960
-5 1.572615  1.307390  0.342030
-6 1.475655  1.188818  0.310990
-7 1.294712  1.108866  0.293218
-8 1.248308  1.094019  0.288564
-```
-
-#### Unfreezing the layers
-
-Next, we unfreeze some of the last layers and looked for a new learning rate.
-
-```python
-learn.unfreeze()
-learn.lr_find(start_lr=1e-09, end_lr=1e-3)
-learn.recorder.plot(skip_end=10)
-```
-
-#### More training
-
-We trained the data for 5 more epochs, which reduced our error rate from **28.9%** to **28.1%**.
-
-```python
-learn.fit_one_cycle(5, max_lr=slice(1e-8,1e-4))
-```
-
-```bash
-epoch train_loss valid_loss error_rate
-1 1.253053  1.089987  0.286584
-2 1.215632  1.080179  0.284901
-3 1.177106  1.072547  0.282871
-4 1.183173  1.069058  0.282376
-5 1.180598  1.069759  0.281436
-```
-
-#### Confusion matrix
-
-The confusion matrix revealed that the following foods were most commonly misclassified.
-
-```bash
-[('filet_mignon', 'steak', 26),
- ('steak', 'filet_mignon', 26),
- ('tuna_tartare', 'beef_tartare', 23),
- ('chocolate_cake', 'chocolate_mousse', 21),
- ('pork_chop', 'filet_mignon', 20),
- ('pork_chop', 'grilled_salmon', 20),
- ('chocolate_mousse', 'chocolate_cake', 19),
- ('prime_rib', 'steak', 18),
- ('ravioli', 'lasagna', 18),
- ('breakfast_burrito', 'huevos_rancheros', 17),
- ('beef_tartare', 'tuna_tartare', 16),
- ('lobster_bisque', 'clam_chowder', 16),
- ('steak', 'pork_chop', 16),
- ('tiramisu', 'chocolate_mousse', 16),
- ('chicken_quesadilla', 'breakfast_burrito', 15),
- ('panna_cotta', 'chocolate_mousse', 15),
- ('ramen', 'pho', 15),
-```
-
-### Output from the Deep Learning Model
-
-The output of the deep learning model is a file with weights. The file is called `model.pth` (or `final.pth`). If you train the model as in this repo, the model is saved to the `models` folder.
-
-The `final.pth` file can be downloaded to your local computer from Jupyter.
-
-The `model.pth` file may be too large to be included in the git commit. There are various options for proceeding with that size dataset:
-
-1. Store the model on google drive.
-2. Store the model on GitHub releases.
-3. Store the model on a bucket in the cloud.
-
-We stored our final model data file under the "releases" area of the repository: [web-deep-learning-classifier/releases](https://github.com/npatta01/web-deep-learning-classifier/releases)
+1. Train a deep learning model using TensorFlow
+2. Export that model
+3. Optimize the model for latency
+4. Deploy the model to both web and mobile platforms
 
 ---
 
-## Deploying the Web App
+Each section builds upon the previous and will expand your skillset in both data science and data engineering.
 
-- We are using this repository as a template: [web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier)
-- Our web app can be found here: [food-img-classifier](https://food-img-classifier.herokuapp.com)
-
-[Heroku](https://www.heroku.com/) and Flask were utilized to deploy the web app.
-
-### Input to Heroku App
-
-This output file from the classifier algorithm, `model.pth` is the input to the Heroku app.
-
-### File Updates to Make
-
-:point_right: To run your own **web** app, you need only make the following adjustments:
-
-1. In this file [src/config.yaml](https://github.com/npatta01/web-deep-learning-classifier/blob/2a30245d467b51705e51aa7a71658dd407dc49cf/src/config.yaml), updates these fields:
-
-   - `title`
-   - `description`
-   - `about`
-   - `code`
-   - `sampleImages`
-
-2. In this file [docs/2_heroku_app.md](https://github.com/npatta01/web-deep-learning-classifier/blob/e9a41bc0a09fe98d44a168b1d64323dad2d074e0/docs/2_heroku_app.md), the following changes need to be made:
-
-- Replace our app name with your app name: `APP_NAME="food-img-classifier"`. As an example: if you classified birds, your app name could be `APP_NAME="bird-img-classifier"`
-
-### Heroku Setup
-
-If you don't have a Heroku account, create one here: [www.heroku.com](https://www.heroku.com/). Each line can be copied and submitted on the terminal.
-
-**Reminder:** in your code, you will have updated your `APP_NAME`
-
-```bash
-wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
-heroku login
-heroku container:login
-
-APP_NAME="food-img-classifier"
-heroku create $APP_NAME
-
-heroku container:push web --app ${APP_NAME}
-
-heroku container:release web --app ${APP_NAME}
-heroku open --app $APP_NAME
-heroku logs --tail --app ${APP_NAME}
-```
-
-Note: After 15 minutes of inactivity, Heroku will suspend the app. The next time the web app is called, Heroku will restart the app. There could be a slight delay in starting the app.
-
-### Our Flask Web Application
-
-- Our Flask web app is available here on Heroku:  
-  [**food-img-classifier**](https://food-img-classifier.herokuapp.com)
-- Give it a try! Upload an image or add a URL.
+As you go through the project, keep in mind the overall objective: **Train an image classifier using deep learning, and deploy the model.**
 
 ---
 
-## Deploying the Mobile App
+## Prerequisites
 
-- repo: [mobile-deep-learning-classifier](https://github.com/npatta01/mobile-deep-learning-classifier)
+- The liveProject is for intermediate Python programmers who know the basics of data science and some experience training an image classifier using deep learning who want to improve their experience of deploying models into production.
 
-The documentation for deploying a mobile app can be found in this folder, [docs](https://github.com/npatta01/mobile-deep-learning-classifier/tree/master/docs).
+### TOOLS
 
-### File Updates to Make
+- Intermediate Python
+- Basic Git
+- Basics of TensorFlow
 
-:point_right: To run your own **mobile** app, you need only make the following adjustments:
+### TECHNIQUES
 
-In this file [config.js](https://github.com/npatta01/mobile-deep-learning-classifier/blob/03cc52c6ae2af67b93d20a3efd55210f1da83aed/config.js), updates these fields:
+- Basic machine learning techniques
+- Basics of neural networks
 
-- `AppConfig`
-  - update the `title`
-  - point `host` to the heroku app url
-- `description`
+## Dataset
 
----
+- The Food 101 data is used for this project, which includes 101 food categories for a total of 101,000 images. Thus, each class has 1,000 images, of which 250 are manually reviewed test images, and 750 are training images. The categories of the ETHZ Food 101 are the 101 most popular categories from the food picture sharing website foodspotting.com. The labels of food categories were chosen from the top 101 most popular dishes.
 
-### Our Apps
+### Data citation
 
-**Video of mobile app**: Watch the 2-minute video demo on YouTube of [Food classifier using fastai](https://www.youtube.com/watch?reload=9&v=7d2qFLeYvRc)
+- Bossard, Lukas and Guillaumin, Matthieu and Van Gool, Luc, Food 101 Mining Discriminative Components with Random Forests, European Conference on Computer Vision, 2014.
 
-### Pricing Options
+## Required setup
 
-1. Apple store: $100
-2. Android Google Play: $30
-3. Android using **Expo** app: **Free**
-   - Develop app
-   - Download **Expo** on your Android phone
-   - Open **Expo** app and scan the app barcode, and give it a try! (can share barcode with others)
+- The following Python libraries will be used in this project. Again, you don’t need working experience with all of these, as you can pick up the basics by reading documentation and putting them to use.
+
+- **Matplotlib:** To do visualizations
+- **PIL Image:** To display images in the notebook
+- **Wget:** To download data from a server to working environment
+- **TensorFlow:** To train a deep learning model
+- **Keras:** For user-friendly implementation of TensorFlow
+- **Watermark:** To show which versions of libraries are being used
+
+## How to use help
+
+- At points in the project workflow the author has created different levels of help designed to get you past the tricky parts.
+
+- The beginnings of these Help sections offer useful resources. Some of these resources might have already been referenced in the project workflow. All of them contain useful information for your project.
+
+- After that, you’ll see help options you can click on if needed. If you prefer a challenge and don’t want help, then you can ignore this part. But if you’re stuck and could use a hand, we’re here for you. The samples below show you what the help system looks like. Go ahead and click on the options now.
+
+- By the way, the FAQs page and the chat system are also available to give you a hand. Look at each of these if you get stuck.
+
+## Resources
+
+- In this section, you’ll find topic-specific reading material curated by the author. You can access these passages with live links embedded in the project.
+
+- help
+- partial solution
+- full solution
+
+## Recommended resources
+
+- Deep Learning with Python by François Chollet
+- Deep Learning for Vision Systems by Mohamed Elgendy
+- Deep Learning with JavaScript by Shanqing Cai, Stanley Bileschi, and Eric D. Nielsen with François Chollet
+- React Native in Action by Nader Dabit
+- Transfer Learning With TensorFlow Hub
+- Deploying Deep Learning Models on Web and Mobile (using fastai PyTorch) by Nidhin Pattaniyil and Reshama Shaikh
+- Sample Mobile Classification App by Yuefeng Zhang
+
+- Additional resources and tutorials are provided throughout the project. Feel free to use any resources you can find to complete the project. If you run into problems or have questions, refer to the Frequently Asked Questions (FAQs) section.
