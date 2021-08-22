@@ -1,114 +1,135 @@
 # Introduction
 
-A web and mobile app image classifier. This example uses the fastai library, but a model weights file from **any deep learning library** can be used to create a web and mobile app using our methods.
+## A web and mobile app image classifier
 
-## Summary
+- This example uses the fastai library, but a model weights file from **any deep learning library** can be used to create a web and mobile app using our methods.
+
+## **Summary**
 
 The project covers:
 
-- training a deep learning model for food images using fastai
-- deploying a web app using Heroku and Flask
-- deploying a mobile app
+1. **🏋 training a deep learning model** for food images using fastai
+2. **💻 deploying a web app** using Heroku and Flask
+3. **📱 deploying a mobile app**
 
-Our Heroku **web** app is [**food-img-classifier**](https://food-img-classifier.herokuapp.com)
+## **Demo**
 
-Our **mobile** apps are available:
+**Demo Heroku web** app is 🔗 [**food-img-classifier**](https://food-img-classifier.herokuapp.com)
 
-- iOS Apple store: [Food Classifier](https://itunes.apple.com/us/app/food-classifier/id1445356461?mt=8)
-- Android Google Play: [Food Classifier](https://play.google.com/store/apps/details?id=com.rsnp.foodclassifier)
+**Mobile** apps are available:
 
-Our **GitHub repositories**:
+- **iOS** Apple store: 🔗 [Food Classifier](https://itunes.apple.com/us/app/food-classifier/id1445356461?mt=8)
+- **Android** Google Play: 🔗 [Food Classifier](https://play.google.com/store/apps/details?id=com.rsnp.foodclassifier)
 
-- [web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier)
-- [mobile-deep-learning-classifier](https://github.com/npatta01/mobile-deep-learning-classifier)
+**GitHub repos**:
 
-## Citation Note
+- 🔗 [web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier)
+- 🔗 [mobile-deep-learning-classifier](https://github.com/npatta01/mobile-deep-learning-classifier)
 
-If you do use our blog or GitHub repos to create your own web or mobile app, we would appreciate it if you would give our work attribution by sharing the below citation:
+---
+
+## **Citation Note**
+
+- If you do use our blog or GitHub repos to create your own web or mobile app, we would appreciate it if you would give our work attribution by sharing the below citation:
 
 > Pattaniyil, Nidhin and Shaikh, Reshama, [Deploying Deep Learning Models On Web And Mobile](https://reshamas.github.io/deploying-deep-learning-models-on-web-and-mobile/), 2019
 
-## Jump to:
+---
 
-Part 1. [Training the Classifier](#training-the-classifier)
+## **Jump to**
 
-Part 2. [Deploying the **WEB** App](#deploying-the-web-app)
+### **Part 1.** [**🏋 Training the Classifier**](#training-the-classifier)
+
+### **Part 2.** [**💻 Deploying the WEB App**](#deploying-the-web-app)
 
 1. [Input to Heroku App](#input-to-heroku-app)
 2. [File Updates to Make](#file-updates-to-make)
 3. [Heroku Setup](#heroku-setup)
 4. [Our Flask Web Application](#our-flask-web-application)
 
-Part 3. [Deploying the **MOBILE** App](#deploying-the-mobile-app)
+### **Part 3.** [**📱 Deploying the MOBILE App**](#deploying-the-mobile-app)
 
 1. [File Updates to Make](#file-updates-to-make)
 2. [Our Apps](#our-apps)
 3. [Pricing Options](#pricing-options)
 
-## Training the Classifier
+---
 
-The Jupyter notebook and code used to train the model are available in this GitHub repository: [web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier)
+## **🏋 Training the Classifier**
 
-The following were used for model **training** (see [requirements.txt](requirements.txt)):
+- The Jupyter notebook and code used to train the model are available in this GitHub repository: [web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier)
 
-- fastai: version 1.0.42
-- PyTorch: version 1.0.0
-- Python: version 3.6
+- The following were used for model **training** (see [requirements.txt](requirements.txt)):
 
-### Deep learning library: fastai
+> **fastai**: version `1.0.42`  
+> **PyTorch**: version `1.0.0`  
+> **Python**: version `3.6`
 
-The [fastai](https://github.com/fastai/fastai) deep learning library, version 1.0 was utilized. Fastai runs on top of PyTorch. The [fastai MOOC](https://docs.fast.ai) was officially released to the public in early 2019.
+### **Deep learning library: fastai**
 
-### GPU: Google Cloud Compute
+- The [fastai](https://github.com/fastai/fastai) deep learning library, version 1.0 was utilized. Fastai runs on top of PyTorch.
+- The [fastai MOOC](https://docs.fast.ai) was officially released to the public in early 2019.
 
-The data was retrieved and analyzed on Google Cloud Platform[(GCP)](console.cloud.google.com/compute/instances). Any cloud platform (such as Paperspace or AWS) is usable, as long as a GPU is available. Instructions for setting up a GPU working environment will be available from fastai.
+### **GPU: Google Cloud Compute**
 
-For this project, we used the Nvidia Tesla P100 with 100 GB of storage.
+- The data was retrieved and analyzed on Google Cloud Platform[(GCP)](console.cloud.google.com/compute/instances).
 
-### Dataset: Food-101
+  - Any cloud platform (such as [Paperspace]() or [AWS]()) is usable, as long as a GPU is available. Instructions for setting up a GPU working environment will be available from fastai.
 
-The [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) data was used which included **101 food categories** with a total of 101K images. Thus, each class had 1000 images, of which 250 are manually reviewed test images and 750 are training images:
+- For this project, we used the **Nvidia Tesla `P100`** with **`100 GB `of storage**.
 
-> On purpose, the training images were not cleaned, and thus still contain some amount of noise. This comes mostly in the form of intense colors and sometimes wrong labels. All images were rescaled to have a maximum side length of 512 pixels.
+### **Dataset: Food-101**
 
-#### Data Citation
+- The [Food-101](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) data was used which included **101 food categories** with a total of 101K images.
+- Thus, **each class had `1000` images**, of which `250` are manually reviewed test images and `750` are training images:
 
-Bossard, Lukas and Guillaumin, Matthieu and Van Gool, Luc, Food-101 -- Mining Discriminative Components with Random Forests, European Conference on Computer Vision, 2014
+> On purpose, the **training images were not cleaned**, and thus still contain s**ome amount of noise**.
+>
+> This comes mostly in the form of **intense colors** and sometimes **wrong labels**.
+>
+> All images were rescaled to have a maximum side length of **`512` pixels**.
 
-#### Retrieving the data
+#### **Data Citation**
 
-The dataset size is 5GB and can be retrieved using:
+- Bossard, Lukas and Guillaumin, Matthieu and Van Gool, Luc, **Food-`101`** -- Mining Discriminative Components with Random Forests, European Conference on Computer Vision, 2014
+
+#### **Retrieving the data**
+
+- The dataset size is **`5GB`** and can be retrieved using:
 
 ```bash
 wget http://data.vision.ee.ethz.ch/cvl/food-101.tar.gz
 ```
 
-#### Unzip data
+#### **Unzip data**
 
-The `tar.gz` file can be opened using:
+- The `tar.gz` file can be opened using:
 
 ```bash
 tar xzf file.tar.gz
 ```
 
-### Training the data: Resnet-34 CNN
+---
 
-#### Training Time
+### **Training the data: Resnet-34 CNN**
 
-We used the Resnet-34 CNN architecture. The model took about an hour to run on GCP.
+#### **Training Time**
 
-#### Training the Deep Learning Model
+- We used the **Resnet-34 CNN architecture**.
+- The model took about an hour to run on GCP.
 
-The code used for training the data is available in the repository [npatta01/web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier) in the notebook [1_train.ipynb](https://github.com/npatta01/web-deep-learning-classifier/blob/master/notebooks/1_train_large.ipynb)
+#### **Training the Deep Learning Model**
 
-We use `ImageDataBunch` to read in the images. This Python class does the following:
+- The code used for training the data is available in the repository 🔗 [npatta01/web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier) in the notebook 🔗 [1_train.ipynb](https://github.com/npatta01/web-deep-learning-classifier/blob/master/notebooks/1_train_large.ipynb)
 
-- specifies the path where the images are located
-- assigns training/validation ratio to 80/20
-- uses the default transformation of images
-- sets the image size to 224
-- sets batch size to 64
-- normalizes the images
+- We use `ImageDataBunch` to read in the images. This **Python class does the following**:
+
+> 1. **specifies the path** where the images are located
+> 2. **assigns training/validation ratio** to `80/20`
+> 3. **uses the default transformation** of images
+> 4. **sets the image size** to `224`
+> 5. **sets batch size** to `64`
+> 6. **normalizes the images**
 
 ```python
 path = Path('../data/food-101/images')
@@ -116,7 +137,7 @@ data = ImageDataBunch.from_folder(path, valid_pct=0.2,
         ds_tfms=get_transforms(), size=224, num_workers=8, bs=64).normalize(imagenet_stats)
 ```
 
-The data is trained on a pre-trained model, resnet34, and we run the `learner` to determine the optimal learning rate.
+- The data is trained on a **pre-trained model**, **resnet34**, and we run the `learner` to **determine the optimal learning rate**.
 
 ```python
 learn = create_cnn(data, models.resnet34, metrics=error_rate,pretrained=True)
@@ -124,17 +145,18 @@ learn.lr_find()
 learn.recorder.plot()
 ```
 
-In our case, a learning rate of 0.01 works well
+- In our case, a **learning rate of** `0.01` works well
 
 ```python
 lr = 1e-2
 ```
 
-#### Other Architectures
+#### **Other Architectures**
 
-We did run more complex architectures. However, because the data had 101 classes and for the purpose of this example and article, and GPU time and storage, we used a simple architecture of `resnet34`.
+- We did run more **complex architectures**. H
+- owever, because the data had `101` classes and for the purpose of this example and article, and GPU time and storage, we used a **simple architecture** of `resnet34`.
 
-#### Back to training
+#### **Back to training**
 
 Next, we fit 8 epochs using our learning rate of 0.01, and we observe our error rate drops to 28.9%.
 
@@ -150,9 +172,9 @@ epoch train_loss  valid_loss  error_rate
 8 1.248308  1.094019  0.288564
 ```
 
-#### Unfreezing the layers
+#### **Unfreezing the layers**
 
-Next, we unfreeze some of the last layers and looked for a new learning rate.
+- Next, we unfreeze some of the last layers and looked for a new learning rate.
 
 ```python
 learn.unfreeze()
@@ -160,9 +182,9 @@ learn.lr_find(start_lr=1e-09, end_lr=1e-3)
 learn.recorder.plot(skip_end=10)
 ```
 
-#### More training
+#### **More training**
 
-We trained the data for 5 more epochs, which reduced our error rate from **28.9%** to **28.1%**.
+- We trained the data for 5 more epochs, which reduced our error rate from **28.9%** to **28.1%**.
 
 ```python
 learn.fit_one_cycle(5, max_lr=slice(1e-8,1e-4))
@@ -177,9 +199,9 @@ epoch train_loss valid_loss error_rate
 5 1.180598  1.069759  0.281436
 ```
 
-#### Confusion matrix
+#### **Confusion matrix**
 
-The confusion matrix revealed that the following foods were most commonly misclassified.
+- The **confusion matrix** revealed that the following **foods** were most **commonly misclassified**.
 
 ```bash
 [('filet_mignon', 'steak', 26),
@@ -201,23 +223,25 @@ The confusion matrix revealed that the following foods were most commonly miscla
  ('ramen', 'pho', 15),
 ```
 
-### Output from the Deep Learning Model
+### **Output from the Deep Learning Model**
 
-The output of the deep learning model is a file with weights. The file is called `model.pth` (or `final.pth`). If you train the model as in this repo, the model is saved to the `models` folder.
+- The **output of the deep learning model is a file with weights**.
+- The file is called `model.pth` (or `final.pth`).
+- If you train the model as in this repo, the model is saved to the `models` folder.
 
-The `final.pth` file can be downloaded to your local computer from Jupyter.
+- The `final.pth` file can be downloaded to your local computer from Jupyter.
 
-The `model.pth` file may be too large to be included in the git commit. There are various options for proceeding with that size dataset:
+- The `model.pth` file may be too large to be included in the git commit. There are various options for proceeding with that size dataset:
 
-1. Store the model on google drive.
-2. Store the model on GitHub releases.
-3. Store the model on a bucket in the cloud.
+  1. Store the model on google drive.
+  2. Store the model on GitHub releases.
+  3. Store the model on a bucket in the cloud.
 
-We stored our final model data file under the "releases" area of the repository: [web-deep-learning-classifier/releases](https://github.com/npatta01/web-deep-learning-classifier/releases)
+- We stored our **final model data file** under the **"releases"** area of the repository: - 🔗 [web-deep-learning-classifier/releases](https://github.com/npatta01/web-deep-learning-classifier/releases)
 
 ---
 
-## Deploying the Web App
+## 💻 **Deploying the Web App**
 
 - We are using this repository as a template: [web-deep-learning-classifier](https://github.com/npatta01/web-deep-learning-classifier)
 - Our web app can be found here: [food-img-classifier](https://food-img-classifier.herokuapp.com)
