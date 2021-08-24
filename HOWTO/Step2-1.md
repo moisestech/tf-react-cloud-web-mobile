@@ -76,10 +76,15 @@
 
 - We are converting the default **tensorflow.js** model for a few reasons.
 
-- Model shards
-- Our model file is large, and the default **tensorflow.js** breaks the model down into 5 MB shards. For Milestone 3, we need one file, so we are specifying weight_shard_size_bytes of `50,000,000` bytes to get that file.
+### Model shards
 
-      --weight_shard_size_bytes=50000000
+- Our model file is large, and the default **tensorflow.js** breaks the model down into 5 MB shards.
+
+  - For Milestone 3, we need one file, so we are specifying weight_shard_size_bytes of `50,000,000` bytes to get that file.
+
+    ```bash
+    --weight_shard_size_bytes=50000000
+    ```
 
 - Inference-speed optimization using GraphModel conversion
 - How does GraphModel conversion boost TensorFlow.js models’ inference speed? It’s achieved by leveraging TensorFlow (Python)’s ahead-of-time analysis of the model’s computation graph at a fine granularity. The computation-graph analysis is followed by modifications to the graph that reduce the amount of computation while preserving the numeric correctness of the graph’s output result.
