@@ -267,9 +267,9 @@ Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com](https
 
 - [TFJS MobileNet Example]() is a nice example from the TensorFlow team on using **MobileNet**, the pre-trained architecture optimized for mobile deployment.
 
-- [FastAPI]() is a Python async webserver similar to Flask. This provides background on the tool we are using for serving our web app in Python.
+- [FastAPI](https://fastapi.tiangolo.com/) is a Python async webserver similar to Flask. This provides background on the tool we are using for serving our web app in Python.
 
-- [Python virtual environment]() has various options for setting up virtual environments in Python.
+- [Python virtual environment](https://realpython.com/effective-python-environment/) has various options for setting up virtual environments in Python.
 
 ---
 
