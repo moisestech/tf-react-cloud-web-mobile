@@ -265,7 +265,7 @@ Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com](https
 
 - [Heroku Installation]() is a useful resource for deploying the app on a free cloud server.
 
-- [TFJS MobileNet Example]() is a nice example from the TensorFlow team on using **MobileNet**, the pre-trained architecture optimized for mobile deployment.
+- [TFJS MobileNet Example](https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet) is a nice example from the TensorFlow team on using **MobileNet**, the pre-trained architecture optimized for mobile deployment.
 
 - [FastAPI](https://fastapi.tiangolo.com/) is a Python async webserver similar to Flask. This provides background on the tool we are using for serving our web app in Python.
 
