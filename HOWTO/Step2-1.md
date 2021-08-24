@@ -62,15 +62,16 @@
   - `Python 3.6+`
   - `TensorFlow.js 2.3.0`
 
-- There are various libraries to set up a virtual environment. Here is the code to create a virtual environment named dl_env. This code works, assuming conda is installed.
+- There are various libraries to set up a virtual environment. Here is the code to create a virtual environment named `dl_env`. This code works, assuming conda is installed.
 
       conda create -n dl_env python=3.6
       conda activate dl_env
       pip install tensorflowjs==2.3.0
 
-- The virtual environment must be set up with tensorflowjs installed within the virtual environment before tensorflowjs_converter can be used in the next step.
+- The virtual environment must be set up with `tensorflowjs` installed within the virtual environment before `tensorflowjs_converter` can be used in the next step.
 
-- Convert the model (artifacts) file.
+### 4. **Convert the model (artifacts) file**
+
 - These are the options we used for tensorflowjs_converter. You may need to adjust these options depending on your model.
 
 - We are converting the default **tensorflow.js** model for a few reasons.
