@@ -3,10 +3,10 @@
 ## **Objective**
 
 - Now that we have **trained our `MobileNetV2`** deep learning model,
-- **we need to deploy it and make it accessible to our users for inference**.
-- In this unit, we will **explore server-based** and **client-based inference**
-- and learn about **when to choose each**.
-- We’ll also learn how to create an **optimized model for the web**. Client-side apps include browser and mobile.
+  - **we need to deploy it and make it accessible to our users for inference**.
+  - In this unit, we will **explore server-based** and **client-based inference**
+  - and learn about **when to choose each**.
+  - We’ll also learn how to create an **optimized model for the web**. Client-side apps include browser and mobile.
 - The **output** from this milestone will be a **web app** that supports **server-side** and **browser-based inference**, deployed on a **cloud** provider like [Heroku]().
 
 ---
@@ -15,16 +15,22 @@
 
 - When considering whether to run inference on a model via a server or on the client, there are several considerations:
 
-- Latency/Network connection of user
-- In server-side inference, once the image/text is received, the inference time is consistent. However, the total time is determined by the user’s network upload speed. In client-side inference, the inference time is dependent on the hardware that the user is running.
+### 1. **Latency/Network connection of user**
 
-- Privacy
+- In server-side inference, **once the image/text is received, the inference time is consistent**.
+
+  - However, the total time is determined by the user’s network upload speed. In client-side inference, the inference time is dependent on the hardware that the user is running.
+
+### 2. **Privacy**
+
 - For sensitive data, users might be uncomfortable with sending the data to a server. - Client-side inference allows users to run their workload securely.
 
-- Future updates to models
+### 3. Future updates to models
+
 - A benefit of server-side inference is the ability to deploy new, state-of-the-art models and consistently update them. In client-side inference, deployment of new models is restricted by the user’s expressed update frequency.
 
-- State of the art models vs. mobile optimized
+### 4. State of the art models vs. mobile optimized
+
 - Due to client hardware and storage restrictions, models that are small and optimized for inference are ideal. Most websites on the web are less than 2 MB of JavaScript code and CSS. The simplest model we created was about 20 MB, which is still not ideal for serving on the web. Therefore, most models currently are served on a server.
 
 - In Milestone 1, you trained a deep learning classifier and saved the model file.
@@ -32,6 +38,8 @@
 - In Milestone 2, you will convert that model to an optimized format and deploy a web app. You will also learn why we deploy apps on the server and the latency characteristics related to that.
 
 - Building on that, in Milestone 3, you will learn how to build a mobile app and deploy it.
+
+---
 
 ## Workflow
 
