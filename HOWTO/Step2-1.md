@@ -259,9 +259,9 @@ Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com](https
 
 ### Additional resources
 
-- [TensorFlow.js Converter]() is the main documentation site for TensorFlow.js converter. This is helpful for converting the Colab model to the needed format for deploying the app.
+- [TensorFlow.js Converter](https://github.com/tensorflow/tfjs/tree/master/tfjs-converter) is the main documentation site for TensorFlow.js converter. This is helpful for converting the Colab model to the needed format for deploying the app.
 
-- [Docker]() is a good tutorial on docker
+- [Docker](https://docker-curriculum.com/) is a good tutorial on docker
 
 - [Heroku Installation](https://devcenter.heroku.com/articles/heroku-cli) is a useful resource for deploying the app on a free cloud server.
 
