@@ -1,12 +1,17 @@
 # Deploying a Model for Browser- and Server-based Inference
 
-## Objective
+## **Objective**
 
-- Now that we have trained our MobileNetV2 deep learning model, we need to deploy it and make it accessible to our users for inference. In this unit, we will explore server-based and client-based inference and learn about when to choose each. We’ll also learn how to create an optimized model for the web. Client-side apps include browser and mobile.
+- Now that we have **trained our `MobileNetV2`** deep learning model,
+- **we need to deploy it and make it accessible to our users for inference**.
+- In this unit, we will **explore server-based** and **client-based inference**
+- and learn about **when to choose each**.
+- We’ll also learn how to create an **optimized model for the web**. Client-side apps include browser and mobile.
+- The **output** from this milestone will be a **web app** that supports **server-side** and **browser-based inference**, deployed on a **cloud** provider like [Heroku]().
 
-- The output from this milestone will be a web app that supports server-side and browser-based inference, deployed on a cloud provider like Heroku.
+---
 
-- Importance to project
+## **Importance to project**
 
 - When considering whether to run inference on a model via a server or on the client, there are several considerations:
 
