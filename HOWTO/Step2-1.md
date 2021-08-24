@@ -104,11 +104,13 @@
 
 ### **Inference-speed optimization: Quantization**
 
-- Quantization is a post-training technique to reduce the size of models. Here, we use quantization to decrease the default 32-bit precision to 16-bit precision which will reduce the model file size by half.
+- Quantization is a post-training technique to reduce the size of models.
 
-      --quantize_float16=\*
+  - Here, we use quantization to decrease the default `32-bit` precision to `16-bit` precision which will reduce the model file size by half.
 
-- We can combine all 3 conversion steps into this:
+        --quantize_float16=\*
+
+- We can combine all **3 conversion** steps into this:
 
       tensorflowjs_converter model.h5 model_tfjs \
       --input_format keras \
@@ -116,25 +118,31 @@
       --weight_shard_size_bytes 50000000 \
       --quantize_float16
 
-- Go into your model_tf folder containing your downloaded files, and run the above converter command in your virtual environment.
+- Go into your `model_tf` folder containing your downloaded files, and run the above converter command in your virtual environment.
 
-## **Setting up your repository for the web app**
+---
 
-- In the above steps, you downloaded the model file and did the required conversion. - Next, you will set up a repository on GitHub to host your code and add the converted model file there.
+### **5. Setting up your repository for the web app**
+
+- In the above steps, you downloaded the model file and did the required conversion.
+  - Next, you will set up a repository on GitHub to host your code and add the converted model file there.
 
 ### **a. Get started with a template repository**
 
-- We are providing a template repository of code to get started with your web app. The template repository is one web app that does both server-side and browser-based inference.
+- We are providing a template repository of code to get started with your web app.
+
+  - The template repository is one web app that does both server-side and browser-based inference.
 
 - You can fork and clone it under your GitHub account. This is the template repository:
-  deploying-web-app
+  [deploying-web-app](https://github.com/reshamas/deploying-web-app.git)
 
 ### **b. Copy the model file to your forked repository**
 
 - This is the original file from Colab: `model.h5`
 - This is the converted tfjs file: `model_tfjs`
 
-- The structure of your forked repository with the model files will look similar to this. Place the original and converted model in the directory backend/assets.
+- The structure of your forked repository with the model files will look similar to this.
+  - Place the original and converted model in the directory `backend/assets`.
 
 ```bash
 ├── backend
