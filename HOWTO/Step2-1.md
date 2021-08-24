@@ -187,8 +187,11 @@
 
 ![](../assets/imgs/food-classifier-web-app-demo.gif)
 
-- Deploy the app to a cloud platform
-- Heroku is a nice, free option for deploying the app.
+---
+
+### 6. **Deploy the app to a cloud platform**
+
+- [Heroku]() is a nice, free option for deploying the app.
 
 - Once the Heroku command-line tools are installed, it can be run using the below commands.
 
@@ -207,13 +210,19 @@
         heroku open --app $APP_NAME
         heroku logs --tail --app ${APP_NAME}
 
-Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com]()
+---
 
-- Record the inference times
-- Now that the app is running remotely, let’s measure the latency for several sample images. We suggest experimenting with images of different sizes and visiting the site on desktop and mobile.
+Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com](https://manning-deploy-imagenet.herokuapp.com/)
 
-- Understand the internals of the repo
-- To learn more about the internals of the template repository and the inference process, refer to the section Understand the Internals of the Repo.
+### 7. **Record the inference times**
+
+- Now that the app is running remotely, let’s measure the latency for several sample images.
+
+  - We suggest experimenting with images of different sizes and visiting the site on desktop and mobile.
+
+### 8. **Understand the internals of the repo**
+
+- To learn more about the internals of the template repository and the inference process, refer to the section [Understand the Internals of the Repo](https://liveproject.manning.com/editmodule/210_3_2/deploying-a-deep-learning-model-on-web-and-mobile-applications/2--deploy-the-model-to-the-web/2-2-understand-the-internals-of-the-repo?).
 
 ### Deliverable
 
@@ -221,13 +230,17 @@ Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com]()
 
 - To help you get started, feel free to use our template repo.
 
-- In the README.md of your repo, there should be a:
+- In the `README.md` of your repo, there should be a:
 
-- Link to your Heroku (or other cloud provider) application.
+  - Link to your Heroku (or other cloud provider) application.
 
-- Table that contains the latency information as described below.
+  - Table that contains the latency information as described below.
+
+![](../assets/imgs/food-classifier-mobile-desktop-latency-table.jpg)
 
 - Upload a link to your deliverable in the Submit Your Work section and click submit. After submitting, the Author’s solution and peer solutions will appear on the page for you to examine.
+
+---
 
 ### Help
 
@@ -237,12 +250,12 @@ Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com]()
 
 - [Deep Learning with JavaScript: Neural networks in TensorFlow.js]() by _Shanqing Cai, Stanley Bileschi, Eric D. Nielsenn and Francois Chollet_
 
-  - **Chapter 1, Unit 1.2, Why Combine JavaScript and Machine Learning?**, is helpful for understanding the code in the template repo for deploying the web app.
-  - **Chapter 1, Unit 3, Why TensorFlow.js?**
-  - **Chapter 12, Unit 2, Model Optimization.**
+  - **Chapter 1, Unit 1.2**, [Why Combine JavaScript and Machine Learning?](), is helpful for understanding the code in the template repo for deploying the web app.
+  - **Chapter 1, Unit 3, [Why TensorFlow.js?]()**
+  - **Chapter 12, Unit 2, [Model Optimization]().**
 
 - [React Native in Action]() by _Nader Dabit_
-  - **Chapter 2, Understanding React, is a good intro to React.**
+  - **Chapter 2, [Understanding React](), is a good intro to React.**
 
 ### Additional resources
 
