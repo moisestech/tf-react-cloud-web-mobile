@@ -59,14 +59,14 @@
 
 - It is recommended to create a new Python 3.6+ virtual environment for this specific step. These are the 2 requirements for that virtual environment:
 
-`Python 3.6+`
-`TensorFlow.js 2.3.0`
+  - `Python 3.6+`
+  - `TensorFlow.js 2.3.0`
 
 - There are various libraries to set up a virtual environment. Here is the code to create a virtual environment named dl_env. This code works, assuming conda is installed.
 
-`conda create -n dl_env python=3.6`
-`conda activate dl_env`
-`pip install tensorflowjs==2.3.0`
+      conda create -n dl_env python=3.6
+      conda activate dl_env
+      pip install tensorflowjs==2.3.0
 
 - The virtual environment must be set up with tensorflowjs installed within the virtual environment before tensorflowjs_converter can be used in the next step.
 
