@@ -158,24 +158,34 @@
 
 ### **c. Understand the frameworks for the web app**
 
-- There are various options for serving web apps in Python, including Flask, Django, and FastAPI.
+- There are various options for serving web apps in Python, including **Flask**, **Django**, and **FastAPI**.
 
-- We will be serving our browser app with FastAPI and using React for the frontend framework. That is the code available in our template repository.
+- We will be serving our browser app with **FastAPI** and using **React** for the frontend framework.
 
-- Feel free to customize or use your own template.
+  - That is the code available in our template repository.
+
+  - Feel free to customize or use your own template.
 
 ### **d. Run the app locally using Docker (see FAQ for more info on Docker)**
 
-- The repo provides a Docker file to run the app. Run these commands to launch the app. The first time you run using Docker, it could take up to 10 minutes. This command needs to be run at the base level of your repo where the Docker file is located.
+- The repo provides a `Docker file` to run the app.
+
+  - Run these commands to launch the app.
+  - The first time you run using Docker, it could take up to 10 minutes.
+  - This command needs to be run at the base level of your repo where the Docker file is located.
 
         docker build -t app .
         docker run -p 8000:8000 -t app
 
 - Running the above two commands will start a webserver running locally on your machine.
 
-- The server can be accessed at http://localhost:8000. You should be greeted with something like below.
+- The server can be accessed at [http://localhost:8000](http://localhost:8000/)
 
-- Voilà! You have a web app running locally!
+  - You should be greeted with something like below.
+
+  - Voilà! You have a web app running locally!
+
+![](../assets/imgs/food-classifier-web-app-demo.gif)
 
 - Deploy the app to a cloud platform
 - Heroku is a nice, free option for deploying the app.
