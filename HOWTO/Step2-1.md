@@ -259,17 +259,19 @@ Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com](https
 
 ### Additional resources
 
-- TensorFlow.js Converter is the main documentation site for TensorFlow.js converter. This is helpful for converting the Colab model to the needed format for deploying the app.
+- [TensorFlow.js Converter]() is the main documentation site for TensorFlow.js converter. This is helpful for converting the Colab model to the needed format for deploying the app.
 
-- Docker is a good tutorial on docker
+- [Docker]() is a good tutorial on docker
 
-- Heroku Installation is a useful resource for deploying the app on a free cloud server.
+- [Heroku Installation]() is a useful resource for deploying the app on a free cloud server.
 
-- TFJS MobileNet Example is a nice example from the TensorFlow team on using MobileNet, the pre-trained architecture optimized for mobile deployment.
+- [TFJS MobileNet Example]() is a nice example from the TensorFlow team on using **MobileNet**, the pre-trained architecture optimized for mobile deployment.
 
-- FastAPI is a Python async webserver similar to Flask. This provides background on the tool we are using for serving our web app in Python.
+- [FastAPI]() is a Python async webserver similar to Flask. This provides background on the tool we are using for serving our web app in Python.
 
-- Python virtual environment has various options for setting up virtual environments in Python.
+- [Python virtual environment]() has various options for setting up virtual environments in Python.
+
+---
 
 ### Tip
 
