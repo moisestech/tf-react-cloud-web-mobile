@@ -50,10 +50,14 @@
   - `model.h5`
   - `classes.json`
 
+---
+
 ### 2. **Understand why model format conversion is needed**
 
 - The model we created using Colab is in the format "TensorFlow Keras".
 - We will need to convert it to the “TensorFlow.js” format because that is needed for client-side inference.
+
+---
 
 ### 3. **Set up the virtual environment**
 
@@ -70,31 +74,36 @@
 
 - The virtual environment must be set up with `tensorflowjs` installed within the virtual environment before `tensorflowjs_converter` can be used in the next step.
 
+---
+
 ### 4. **Convert the model (artifacts) file**
 
 - These are the options we used for tensorflowjs_converter. You may need to adjust these options depending on your model.
 
 - We are converting the default **tensorflow.js** model for a few reasons.
 
-### Model shards
+### **Model shards**
 
 - Our model file is large, and the default **tensorflow.js** breaks the model down into 5 MB shards.
 
   - For Milestone 3, we need one file, so we are specifying weight_shard_size_bytes of `50,000,000` bytes to get that file.
 
-    ```bash
-    --weight_shard_size_bytes=50000000
-    ```
+        --weight_shard_size_bytes=50000000
 
-- Inference-speed optimization using GraphModel conversion
-- How does GraphModel conversion boost TensorFlow.js models’ inference speed? It’s achieved by leveraging TensorFlow (Python)’s ahead-of-time analysis of the model’s computation graph at a fine granularity. The computation-graph analysis is followed by modifications to the graph that reduce the amount of computation while preserving the numeric correctness of the graph’s output result.
+- Inference-speed optimization using `GraphModel` conversion
 
-      tensorflowjs_converter \
-       --input_format keras \
-       --output_format tfjs_graph_model \
-       my/layers-model my/graph-model
+- _How does GraphModel conversion boost TensorFlow.js models’ inference speed?_
 
-- Inference-speed optimization: Quantization
+  - _It’s achieved by leveraging TensorFlow (Python)’s ahead-of-time analysis of the model’s computation graph at a fine granularity._
+  - _The computation-graph analysis is followed by modifications to the graph that reduce the amount of computation while preserving the numeric correctness of the graph’s output result._
+
+        tensorflowjs_converter \
+         --input_format keras \
+         --output_format tfjs_graph_model \
+         my/layers-model my/graph-model
+
+### **Inference-speed optimization: Quantization**
+
 - Quantization is a post-training technique to reduce the size of models. Here, we use quantization to decrease the default 32-bit precision to 16-bit precision which will reduce the model file size by half.
 
       --quantize_float16=\*
