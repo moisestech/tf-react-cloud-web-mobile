@@ -263,7 +263,7 @@ Here is our web app as an example: [manning-deploy-imagenet.herokuapp.com](https
 
 - [Docker]() is a good tutorial on docker
 
-- [Heroku Installation]() is a useful resource for deploying the app on a free cloud server.
+- [Heroku Installation](https://devcenter.heroku.com/articles/heroku-cli) is a useful resource for deploying the app on a free cloud server.
 
 - [TFJS MobileNet Example](https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet) is a nice example from the TensorFlow team on using **MobileNet**, the pre-trained architecture optimized for mobile deployment.
 
