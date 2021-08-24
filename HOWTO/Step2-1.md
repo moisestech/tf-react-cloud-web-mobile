@@ -41,21 +41,21 @@
 
 ---
 
-## Workflow
+## **Workflow**
 
-### 1. Download the model from Colab to your computer
+### 1. **Download the model from Colab to your computer**
 
 - Make a folder called model_tf on your local computer and save the model and labels in that folder. Make sure that the following naming convention is being used:
 
   - `model.h5`
   - `classes.json`
 
-### 2. Understand why model format conversion is needed
+### 2. **Understand why model format conversion is needed**
 
 - The model we created using Colab is in the format "TensorFlow Keras".
 - We will need to convert it to the “TensorFlow.js” format because that is needed for client-side inference.
 
-### 3. Set up the virtual environment
+### 3. **Set up the virtual environment**
 
 - It is recommended to create a new Python 3.6+ virtual environment for this specific step. These are the 2 requirements for that virtual environment:
 
