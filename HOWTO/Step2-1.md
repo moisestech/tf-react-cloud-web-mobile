@@ -25,19 +25,19 @@
 
 - For sensitive data, users might be uncomfortable with sending the data to a server. - Client-side inference allows users to run their workload securely.
 
-### 3. Future updates to models
+### 3. **Future updates to models**
 
 - A benefit of server-side inference is the ability to deploy new, state-of-the-art models and consistently update them. In client-side inference, deployment of new models is restricted by the user’s expressed update frequency.
 
-### 4. State of the art models vs. mobile optimized
+### 4. **State of the art models vs. mobile optimized**
 
 - Due to client hardware and storage restrictions, models that are small and optimized for inference are ideal. Most websites on the web are less than 2 MB of JavaScript code and CSS. The simplest model we created was about 20 MB, which is still not ideal for serving on the web. Therefore, most models currently are served on a server.
 
-- In Milestone 1, you trained a deep learning classifier and saved the model file.
+  - In **Milestone 1**, you trained a deep learning classifier and saved the model file.
 
-- In Milestone 2, you will convert that model to an optimized format and deploy a web app. You will also learn why we deploy apps on the server and the latency characteristics related to that.
+  - In **Milestone 2**, you will convert that model to an optimized format and deploy a web app. You will also learn why we deploy apps on the server and the latency characteristics related to that.
 
-- Building on that, in Milestone 3, you will learn how to build a mobile app and deploy it.
+  - Building on that, in **Milestone 3**, you will learn how to build a mobile app and deploy it.
 
 ---
 
